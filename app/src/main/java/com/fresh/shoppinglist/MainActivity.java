@@ -16,11 +16,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ListView itemsLV;
     private EditText itemIn;
-    private ImageButton btnAdd;
-    private Button btnRemoveItems;
-    private Button btnClearList;
-    private ArrayList<String> shoppingList = new ArrayList<>();
-    private ArrayList<String> checkedItems = new ArrayList<>();
+    private final ArrayList<String> shoppingList = new ArrayList<>();
+    private final ArrayList<String> checkedItems = new ArrayList<>();
     private ArrayAdapter<String> adapter;
 
     @Override
@@ -45,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd = findViewById(R.id.btnAdd);
+        ImageButton btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRemoveItems = findViewById(R.id.btnRemoveItems);
+        Button btnRemoveItems = findViewById(R.id.btnRemoveItems);
         btnRemoveItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnClearList = findViewById(R.id.btnClearList);
+        Button btnClearList = findViewById(R.id.btnClearList);
         btnClearList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
