@@ -70,5 +70,15 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+
+        btnClearList = findViewById(R.id.btnClearList);
+        btnClearList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.clear();
+                checkedItems.clear();
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }
