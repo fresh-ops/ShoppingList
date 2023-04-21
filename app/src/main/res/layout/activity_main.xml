@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:paddingHorizontal="10dp">
+<!--    android:background="@drawable/paper_texture"-->
+<!--    android:scaleType="fitXY"-->
+
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/addPanel"/>
+
+    <LinearLayout
+        android:id="@+id/addPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/headerTitle"
+        app:layout_constraintBottom_toTopOf="@id/itemsList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rounded_rect"
+            android:backgroundTint="?attr/colorPrimaryVariant"
+            android:hint="@string/add_item"
+            android:textSize="20sp"
+            android:autofillHints=""
+            android:inputType="text"
+            android:layout_weight="6"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:padding="5dp"
+            app:srcCompat="@drawable/done_icon"
+            android:scaleType="fitCenter"
+            android:background="@drawable/rounded_rect"
+            android:backgroundTint="@color/accept" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/itemsList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:choiceMode="multipleChoice"
+        android:background="@drawable/rounded_rect"
+        android:backgroundTint="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/addPanel"
+        app:layout_constraintBottom_toTopOf="@id/removePanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/removePanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/itemsList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/btnRemoveItems"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:text="@string/remove_checked"
+            android:backgroundTint="?attr/colorSecondary"/>
+        <Button
+            android:id="@+id/btnClearList"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:text="@string/clear_all"
+            android:backgroundTint="@color/decline"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
